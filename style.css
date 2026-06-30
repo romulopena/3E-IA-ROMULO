@@ -25,3 +25,12 @@ body {
 h1 {
   color: var(--cor-destaque);
 }
+
+button {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  transition: background-color 0.3s;
+}
