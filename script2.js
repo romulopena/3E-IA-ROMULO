@@ -3,7 +3,7 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
-
+//acima criação das constantes JS dos elementos HTML
 const perguntas = [
     {
         enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
@@ -67,26 +67,27 @@ const perguntas = [
             {
                 texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
                 afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
-            }
-        ]
-    },
-];
+            } //fechamento do objeto do texto e afirmação da lista de alternativas
+        ] //fechamento da lista de alternativas
+    }, //fechamento do objeto com enunciado e lista de alternativas da lista de perguntas
+]; //fechamento da lista de perguntas
 
 
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
+let atual = 0; //variavel do inicio da lista de perguntas
+let perguntaAtual; //variavel correspondente a pergunta atual selecionada
+let historiaFinal = ""; //variavel que guarda os textos das afirmações para formar a frase final da IA
 
 function mostraPergunta() {
     if (atual >= perguntas.length) {
         mostraResultado();
         return;
-    }
+    } 
+//função que verifica se a ordem da pergunta atual é maior ou igual a das outras perguntas da lista. Se j[a foi todas, exibe o texto final]
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
     mostraAlternativas();
-}
+} // codigo que mostra o texto de pergunta atual extraido do item enunciado.
 
 function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas) {
@@ -94,7 +95,7 @@ function mostraAlternativas(){
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
-    }
+    } //Para a constante alternativa das alternativas é criado um botão novo com alternativa diferente a cada vez que seleciona uma resposta pelo clique
 }
 
 function respostaSelecionada(opcaoSelecionada) {
@@ -102,12 +103,12 @@ function respostaSelecionada(opcaoSelecionada) {
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
-}
+} //uma função seleciona as resposta e que vai juntando as afirmaçÕes delas em uma variavel historiaFinal selecionadas de acordo com as opçÕes selecionadas
 
 function mostraResultado() {
     caixaPerguntas.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
-}
+} //função que mostra o Resultado final iniciando com nov um breve texto na caixa de perguntas e que o resultado do final é inserido com o texto guardado na varivel historiaFInal com um espaçamento vazio criado na caixa de alternativas.
 
-mostraPergunta();
+mostraPergunta(); //função geral que mostra a pergunta
