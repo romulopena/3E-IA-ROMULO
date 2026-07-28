@@ -9,44 +9,47 @@ const textoResultado = document.querySelector(".texto-resultado");
 const perguntas = [
 
     {
-        enunciado: "",
+        enunciado: "Quais os principais desafios de escolher entre entrar na faculdade logo após o ensino médio ou buscar o primeiro emprego?",
         alternativas: [
             {
-                texto: "",
-                afirmacao: " "
+                texto: "Entrar direto na faculdade garante continuidade nos estudos",
+                afirmacao: "Isso exige escolher uma carreira sem ter vivência prática no mercado. "
             },
             {
-                texto: "",
-                afirmacao: ""
+                texto: "Buscar o primeiro emprego traz independência financeira rápida.",
+                afirmacao: "Isso pode dificultar a conciliação de horários ao decidir cursar uma faculdade depois."
             }
         ]
     },
 
       {
-        enunciado: "",
+        enunciado: "Como a combinação de faculdade e primeira profissão impacta o desenvolvimento do jovem adulto?",
         alternativas: [
             {
-                texto: "",
-                afirmacao: " "
+                texto: "Fazer faculdade e trabalhar ao mesmo tempo acelera o crescimento pessoal.",
+                afirmacao: "Essa rotina exige alto nível de organização e gestão do tempo. "
             },
             {
-                texto: "",
-                afirmacao: ""
+                texto: "A união de teoria e prática fortalece o currículo desde o início.",
+                afirmacao: "Isso aumenta as chances de ascensão rápida no mercado de trabalho."
             }
         ]
     },
 
       {
-        enunciado: "",
+        enunciado: "Como a conclusão do ensino médio influencia a decisão entre seguir para o ensino superior ou ingressar no mercado de trabalho?",
         alternativas: [
             {
-                texto: "",
-                afirmacao: " "
+                texto: "O fim do ensino médio marca o encerramento da formação básica.",
+                afirmacao: "Essa etapa gera pressão para decidir rapidamente os próximos passos profissionais. "
             },
             {
-                texto: "",
-                afirmacao: ""
-            }//fechamento do objeto do texto e afirmação da lista de alternativas
+                texto: "A formação escolar desperta o desejo por autonomia.",
+                afirmacao: "A necessidade de renda faz muitos jovens priorizarem a primeira profissão."
+            }
+            
+            
+            //fechamento do objeto do texto e afirmação da lista de alternativas
         ]//fechamento da lista de alternativas
     }//fechamento do objeto com enunciado e lista de alternativas da lista de perguntas
             
